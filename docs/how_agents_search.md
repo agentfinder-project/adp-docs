@@ -1,6 +1,6 @@
 # How Clients Discover
 
-This guide outlines how AI client orchestrators (such as Claude Code, Gemini, Copilot) query ADP discovery services at runtime to find and load augments.
+This guide outlines how AI client orchestrators (such as Claude Code, Gemini, Copilot) query ARDP discovery services at runtime to find and load agentic resources.
 
 ---
 
@@ -57,11 +57,11 @@ The discovery service returns a ranked list of catalog entries satisfying the se
 
 ## Step 3: Client-side trust verification
 
-Before connecting to or invoking any discovered augment, the client orchestrator MUST verify the publisher's credentials:
+Before connecting to or invoking any discovered agentic resource, the client orchestrator MUST verify the publisher's credentials:
 
 1.  **Extract domain**: Parse the logical FQDN authority domain embedded in the URN identifier (e.g., `urn:ai:acme.com:travel:...` ➜ `acme.com`).
 2.  **Verify identity**: Fetch the manifest and cross-reference the `trustManifest.identity` (e.g., SPIFFE ID or `did:web`) to confirm the publisher controls the claimed FQDN.
 3.  **Audit compliance**: Parse the `attestations` array inside `trustManifest` to verify SOC2, HIPAA, or GDPR certificate links.
 4.  **Verify signature**: Verify the detached JWS cryptographic signature block computed over the trust metadata to ensure no tampering has occurred in transit.
 
-Discovery returns *which* augment fits and *where* to reach it; invocation then happens over that augment's own protocol.
+Discovery returns *which* agentic resource fits and *where* to reach it; invocation then happens over that agentic resource's own protocol.

@@ -1,12 +1,12 @@
 # Comparisons
 
-ADP is designed as a **superset** of existing agent and tool discovery approaches. It is not a replacement for other registries; rather, it acts as a federated overlay that unites them.
+ARDP is designed as a **superset** of existing agent and tool discovery approaches. It is not a replacement for other registries; rather, it acts as a federated overlay that unites them.
 
 **Q. Why not X?**
 **A. Why not both?**
 
 *   **Universal envelope**: Anything can get an AI Catalog "card" — an MCP server, a Skill, an ACP agent, an A2A agent, a traditional REST API, or whatever comes next.
-*   **Federated indexing**: Once a card is published, it can be indexed by any ADP discovery service. You don't have to choose between registries; a discovery service can consume all of them, or you can curate your own subset.
+*   **Federated indexing**: Once a card is published, it can be indexed by any ARDP discovery service. You don't have to choose between registries; a discovery service can consume all of them, or you can curate your own subset.
 
 ---
 

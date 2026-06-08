@@ -1,12 +1,12 @@
 # How to Publish
 
-Exposing your augments (MCP servers, Skills, ACP agents, APIs) to ADP discovery services is a simple three-step procedure.
+Exposing your agentic resources (MCP servers, Skills, ACP agents, APIs) to ARDP discovery services is a simple three-step procedure.
 
 ---
 
 ## Step 1: Create the manifest (`ai-catalog.json`)
 
-Create a static `ai-catalog.json` manifest listing your augments. Below is a copy-pasteable template:
+Create a static `ai-catalog.json` manifest listing your agentic resources. Below is a copy-pasteable template:
 
 ```json
 {
@@ -32,7 +32,7 @@ Create a static `ai-catalog.json` manifest listing your augments. Below is a cop
 }
 ```
 
-*   **`identifier`**: Naming must follow the domain-anchored URN standard: `urn:ai:<your-domain>:<augment-name>`.
+*   **`identifier`**: Naming must follow the domain-anchored URN standard: `urn:ai:<your-domain>:<agentic resource-name>`.
 *   **`representativeQueries`**: Provide **2–5 natural language queries** to enable high-fidelity semantic vector search.
 
 ---

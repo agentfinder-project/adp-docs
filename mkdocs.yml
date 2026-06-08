@@ -1,9 +1,9 @@
 # Project information
-site_name: Augment Discovery Protocol
-site_url: https://augmentdiscoveryprotocol.io/
-site_description: A protocol for discovering augments — tools, Skills, MCP servers, APIs, workflows, and agents — for AI clients
-repo_name: agentfinder-project/adp-docs
-repo_url: https://github.com/agentfinder-project/adp-docs
+site_name: ardp.io
+site_url: https://ardp.io/
+site_description: A protocol for discovering agentic resources — tools, Skills, MCP servers, APIs, workflows, and agents — for AI clients
+repo_name: ardp-project/adp-docs
+repo_url: https://github.com/ardp-project/adp-docs
 
 # Configuration
 theme:
@@ -78,7 +78,7 @@ nav:
   - Home: index.md
   - About:
     - Introduction: introduction.md
-    - Why ADP?: why.md
+    - Why ARDP?: why.md
     - Comparisons: comparisons.md
     - FAQ: faq.md
   - Guides:
@@ -86,5 +86,5 @@ nav:
     - How clients discover: how_agents_search.md
     - How to build a discovery service: how_to_build_search.md
   - Specifications:
-    - ADP Specification: spec.md
+    - ARDP Specification: spec.md
     - AI Catalog Spec: ai_catalog_spec.md
