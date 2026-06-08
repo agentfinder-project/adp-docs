@@ -1,6 +1,6 @@
-# Agent Finder Specification
+# Agentic Resource Discovery Protocol Specification
 
-**Federated Discovery and Search for Agents**
+**Federated Discovery and Search for Agentic Resources**
 
 **Version**: v0.5 (Draft)  
 **Status**: Proposal  
@@ -8,9 +8,9 @@
 
 ## 1\. Overview
 
-LLMs increasingly rely on external capabilities — MCP tools, A2A agents, skills, and other callable services — to extend their functionality. In this document, we refer to these generically as agents or capabilities.
+LLMs increasingly rely on external capabilities — MCP tools, A2A agents, skills, and other callable services — to extend their functionality. In this document, we refer to these generically as agentic resources.
 
-**Agent Finder** is a specification that defines how AI artifacts are cataloged, discovered, and searched across federated networks.
+The **Agentic Resource Discovery Protocol (ARDP)** is a specification that defines how AI artifacts are cataloged, discovered, and searched across federated networks.
 
 This version (v0.4.2) aligns the discovery framework with the broader ai-catalog standard, shifting towards a media-type-driven approach and mandating standard web protocols (REST) for discovery interfaces to ensure maximum interoperability.
 
@@ -18,19 +18,19 @@ This version (v0.4.2) aligns the discovery framework with the broader ai-catalog
 
 The prevailing model requires users or developers to explicitly “install” or hardcode each agent before use. As the ecosystem scales to thousands or millions of agents, we need a model where LLMs can discover and invoke agents dynamically, similar to how search engines discover web pages.
 
-Agent descriptions tend to be generic, and most LLMs currently select tools by including all descriptions in the context window — which does not scale. Agent Finder addresses this by moving discovery outside the LLM into a dedicated search service, where richer signals (representative queries, publisher identity, compliance metadata, usage patterns) can be leveraged without consuming context window tokens.
+Agent descriptions tend to be generic, and most LLMs currently select tools by including all descriptions in the context window — which does not scale. ARDP addresses this by moving discovery outside the LLM into a dedicated search service, where richer signals (representative queries, publisher identity, compliance metadata, usage patterns) can be leveraged without consuming context window tokens.
 
 ## 3\. Core Design Principles
 
-The Agent Finder protocol is guided by the following core design principles to ensure scalability, interoperability, and ease of adoption:
+ARDP is guided by the following core design principles to ensure scalability, interoperability, and ease of adoption:
 
 ### 3.1 Search-First Discovery
 
-Rather than requiring users or systems to pre-install agents (analogous to the mobile app store paradigm), Agent Finder promotes a model where agents are discovered dynamically through search. Registries maintain a shared, continuously updated index, making capabilities discoverable the moment they are published.
+Rather than requiring users or systems to pre-install agents (analogous to the mobile app store paradigm), ARDP promotes a model where agents are discovered dynamically through search. Registries maintain a shared, continuously updated index, making capabilities discoverable the moment they are published.
 
 ### 3.2 Scalability Beyond Context Windows
 
-Traditional tool selection relies on injecting all descriptions into the LLM's context window, which does not scale. Agent Finder moves the selection problem outside the LLM into a dedicated search service, leveraging information retrieval techniques to scale to thousands or millions of capabilities without consuming context window tokens.
+Traditional tool selection relies on injecting all descriptions into the LLM's context window, which does not scale. ARDP moves the selection problem outside the LLM into a dedicated search service, leveraging information retrieval techniques to scale to thousands or millions of capabilities without consuming context window tokens.
 
 ### 3.3 Artifact Agnostic Envelope
 
@@ -160,7 +160,7 @@ Each object in the entries array MUST contain:
 
 | Field | Type | Description |
 | :---- | :---- | :---- |
-| identifier | String | Globally unique logical identifier for discovery. MUST use a domain-anchored URN namespace format (urn:ai:\<publisher\>:\<namespace\>:\<agent-name\>) where \<publisher\> is a verifiable domain name. This guarantees cross-network uniqueness, nomenclature stability, and decentralized trust binding. See [§4.2.1](https://file+.vscode-resource.vscode-cdn.net/Users/jbu/Development/ai-card/specification/agent-finder.md#421-agent-identifier-identifier-format-and-rationale) for detailed format specifications and architectural rationale. |
+| identifier | String | Globally unique logical identifier for discovery. MUST use a domain-anchored URN namespace format (urn:ai:\<publisher\>:\<namespace\>:\<agent-name\>) where \<publisher\> is a verifiable domain name. This guarantees cross-network uniqueness, nomenclature stability, and decentralized trust binding. See [§4.2.1](#421-agent-identifier-identifier-format-and-rationale) for detailed format specifications and architectural rationale. |
 | displayName | String | Human-readable name. |
 | type | String | Type of the AI artifact. |
 
@@ -399,10 +399,10 @@ Publishers advertise their capability manifests via the following mechanisms:
 
 Agent Registry instances populate their indexes through ingestion pipelines:
 
-* **Web Ingestion (Required)**: Crawling ai-catalog.json files from discovered URIs. All Agent Finder implementations MUST support this.  
+* **Web Ingestion (Required)**: Crawling ai-catalog.json files from discovered URIs. All ARDP implementations MUST support this.  
 * **Additional Pipelines (Optional)**: Registries may support scanning git repositories, npm registries, or OCI registries as indicated by their configuration.
 
-## 7\. The Agent Finder API
+## 7\. The ARDP API
 
 An Agent Registry **MUST** expose a standard HTTP REST search interface to guarantee universal federation. The operational base URL for these endpoints is discovered dynamically by identifying catalog entries within the static ai-catalog.json manifest that carry the application/ai-registry+json media type, as defined in §4.1.
 
