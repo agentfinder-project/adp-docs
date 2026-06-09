@@ -2,8 +2,6 @@
 site_name: ards.io
 site_url: https://ards.io/
 site_description: A protocol for discovering agentic resources — tools, Skills, MCP servers, APIs, workflows, and agents — for AI clients
-repo_name: ards-project/docs
-repo_url: https://github.com/ards-project/docs
 
 # Configuration
 theme:
@@ -15,18 +13,9 @@ theme:
     text: Outfit
     code: Fira Code
   palette:
-    - scheme: default
-      primary: white
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: black
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+    scheme: default
+    primary: white
+    accent: indigo
   features:
     - content.code.copy
     - content.code.select
@@ -73,8 +62,9 @@ extra_css:
   - stylesheets/homepage.css
 
 # Plugins
-plugins:
-  - search
+# Empty list (not omitted) so MkDocs does NOT re-enable its default `search`
+# plugin — this removes the header search box.
+plugins: []
 
 # Navigation
 nav:
