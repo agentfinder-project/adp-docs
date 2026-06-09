@@ -22,6 +22,6 @@ An agentic resource is any external capability an AI client can call on to do a 
 
 ## Who is behind ARDS?
 
-ARDS is being developed by a working group with participants from Microsoft, Google, Hugging Face, GoDaddy, and others. This work is part of a broader effort to create an open discovery layer for AI-native resources.
+ARDS is being developed by a working group with participants from Microsoft, Google, Hugging Face, GoDaddy, and others. This work is part of a broader effort to create an open discovery layer for resources that AIs can draw on.
 
 To understand the motivation and design, start with the [Introduction](introduction.md).
