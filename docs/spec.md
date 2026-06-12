@@ -207,6 +207,8 @@ urn:ai:<publisher>:<namespace>:<agent-name>
 * **\<namespace\>**: Optional hierarchical segments separated by : (e.g., finance:trading, weather:telemetry). Allows publishers to categorize capabilities by department, team, or product line without altering infrastructure routing.  
 * **\<agent-name\>**: Mandatory terminal segment representing the specific, logical short name of the agent or tool (e.g., assistant, pptx-creator).
 
+#### Please see more details at [Architectural Rationale for URN Restriction](#appendix-c:-agent-naming-urn-format)
+
 ### 4.3 Host Info Object
 
 Describes the operator of the catalog.
