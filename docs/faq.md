@@ -55,3 +55,9 @@ ARD also makes impersonation harder than the status quo, on several concrete fro
 - **Signed metadata** lets a client confirm a record was not altered in transit, and **provenance** lets it trace where a resource came from.
 
 Compared with today's ad hoc wiring — copy-pasted endpoints with no identity or provenance — ARD raises the floor by giving every result a verifiable origin. It does not, on its own, decide what is safe; it **communicates the identity, verification, and provenance signals** that let curated registries and clients refuse what is not.
+
+---
+
+## How can I give feedback?
+
+ARD is being developed in the open, and feedback is welcome. The best way to suggest changes, report a problem, or ask a question about the specification is to **open an issue on GitHub**: [github.com/ards-project/docs/issues](https://github.com/ards-project/docs/issues).
